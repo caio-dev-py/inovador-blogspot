@@ -6,14 +6,15 @@ authors = [
     {name = "caio-dev-py",email = "caio.dev.araujo@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.13,<4.0"
 dependencies = [
     "flask (>=3.1.2,<4.0.0)",
     "flask-wtf (>=1.2.2,<2.0.0)",
     "flask-sqlalchemy (>=3.1.1,<4.0.0)",
     "flask-login (>=0.6.3,<0.7.0)",
     "python-dotenv (>=1.1.1,<2.0.0)",
-    "email-validator (>=2.3.0,<3.0.0)"
+    "email-validator (>=2.3.0,<3.0.0)",
+    "vercel (>=0.2.1,<0.3.0)"
 ]
 
 [tool.poetry]
