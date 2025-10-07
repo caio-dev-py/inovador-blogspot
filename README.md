@@ -1,4 +1,4 @@
-# 📞 Agenda de Contatos - Flask
+# 📞 Inovador Blogspot - Flask
 
 Um aplicativo web de **agenda telefônica** desenvolvido com **Flask**, **Flask-WTF**, **Flask-Login** e **Flask-SQLAlchemy**.  
 Permite **adicionar, editar, visualizar e excluir contatos** de forma simples e intuitiva.
