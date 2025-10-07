@@ -1,0 +1,41 @@
+{% extends "base.html" %}{% block title %}Posts{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h1 class="mb-5">Inovador</h1>
+        {% if posts %}
+            {% for post in posts %}
+                {% for usuario in usuarios %}
+                    {% if usuario.id == post.id_usuario %}
+                        <div class="header-post mt-2">
+                            <i class="fa-regular fa-user"></i>
+                            <h3>{{ usuario.nome }}</h3>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                <div class="card text-white bg-dark">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ post.titulo }}</h4>
+                        <p class="card-text">{{ post.conteudo }}</p>
+                        <p class="card-text">{{ post.data_postagem.day}}/{{ post.data_postagem.month }}/{{ post.data_postagem.year }} {{ post.data_postagem.hour }}:{{ post.data_postagem.minute }}</p>
+                    </div>
+                </div>
+                
+        
+            {% endfor %}
+        {% endif %}
+
+        {% with msgs = get_flashed_messages(with_categories=true) %}
+            {% if msgs %}
+                {% for cat, msg in msgs %}
+                    <div class="alert alert-{{ cat }} alert-dismissible fade show mt-2">
+                        {{ msg }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}{% block title %}Perfil{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="header-perfil">
+            <div>
+                <h1>{{ current_user.nome }}</h1>
+                <p class="text mb-5">{{ current_user.email }}</p>
+            </div>
+            <p><a href="/postar" class="btn btn-secondary">Adicionar Postagem</a></p>
+        </div>
+
+        {% with msgs = get_flashed_messages(with_categories=true) %}
+            {% if msgs %}
+                {% for cat, msg in msgs %}
+                    <div class="alert alert-{{ cat }} alert-dismissible fade show mt-2">
+                        {{ msg }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% if perfil_posts %}
+            {% for post in perfil_posts %}
+                <div class="card text-white bg-dark mt-3 card-perfil">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ post.titulo }}</h4>
+                        <p class="card-text">{{ post.conteudo }}</p>
+                        <p class="card-text">{{ post.data_postagem.day}}/{{ post.data_postagem.month }}/{{ post.data_postagem.year }} {{ post.data_postagem.hour }}:{{ post.data_postagem.minute }}</p>
+                    </div>
+                    <div class="card-buttons">
+                        <a href="{{ url_for('user.editar', id_post=post.id)}}" class="btn btn-secondary">Editar</a>
+                        <form action="{{ url_for('user.deletar', id_post=post.id) }}" method="post">
+                            {{ form.hidden_tag() }}
+
+                            {{ form.deletar(class="btn btn-danger") }}
+                        </form>
+                    </div>
+                </div>
+                
+        
+            {% endfor %}
+        {% endif %}
+
+        
+    </div>
+
+{% endblock %}

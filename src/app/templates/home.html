@@ -1,0 +1,25 @@
+{% extends "base.html" %}{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+
+        {% with msgs = get_flashed_messages(with_categories=true) %}
+            {% if msgs %}
+                {% for cat, msg in msgs %}
+                    <div class="alert alert-{{ cat }} alert-dismissible fade show mt-3">
+                        {{ msg }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <div class="mt-5">
+            <h3>Seja bem-vindo a página inicial!</h3>
+            <p class="text">Esta é uma página que vai imitar um twitter, você vai postar suas coisas aqui.</p>
+        </div>
+    
+    </div>
+
+{% endblock %}

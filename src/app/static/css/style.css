@@ -1,0 +1,167 @@
+/* ===== Tema Dark com Azul Marinho ===== */
+html, body {
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0b0c10; /* Fundo principal escuro */
+    color: #e0e0e0; /* Texto claro */
+    font-family: "Segoe UI", Roboto, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #0d1b2a !important; /* Azul marinho escuro */
+    border-bottom: 1px solid #1f3b57;
+}
+
+.navbar .nav-link {
+    color: #e0e0e0 !important;
+    transition: 0.3s;
+}
+
+.navbar .nav-link:hover {
+    color: #4da6ff !important; /* Azul claro ao passar o mouse */
+}
+
+.navbar-brand {
+    color: #4da6ff !important;
+    font-weight: bold;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: #0660b9;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #4c7bc2;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: #215396;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-secondary:hover {
+    background-color: #274060;
+    transform: scale(1.05);
+}
+
+.btn-danger {
+    background-color: #a83232;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-danger:hover {
+    background-color: #e63946;
+    transform: scale(1.05);
+}
+
+/* Cards */
+.card {
+    background-color: #162436;
+    border: 1px solid #1f3b57;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.card:hover {
+    border-color: #4da6ff;
+    box-shadow: 0 0 15px rgba(77, 166, 255, 0.3);
+}
+
+/* Cabeçalho do Perfil e Posts */
+.header-perfil,
+.header-post {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+
+
+    background-color: #0d1b2a;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.header-perfil h1,
+.header-post h3 {
+    color: #4da6ff;
+}
+
+.header-perfil {
+    justify-content: space-between;
+}
+
+/* Botões dentro do card */
+.card-buttons .btn {
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Alerts */
+.alert {
+    border-radius: 8px;
+    border: none;
+}
+
+.alert-danger {
+    background-color: #8b1e2f;
+    color: #fff;
+}
+
+.alert-success {
+    background-color: #1b5e20;
+    color: #fff;
+}
+
+/* Inputs e Formulários */
+.form-control {
+    background-color: #0d1b2a;
+    color: #e0e0e0;
+    border: 1px solid #1f3b57;
+    transition: 0.3s;
+}
+
+.form-control:focus {
+    background-color: #162436;
+    border-color: #4da6ff;
+    color: #fff;
+    box-shadow: 0 0 8px rgba(77, 166, 255, 0.4);
+}
+
+/* textos */
+
+.text {
+    color: rgb(148, 148, 148);
+}
+
+/* Footer */
+footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    text-align: center;
+    background-color: #0d1b2a;
+    color: #777;
+}

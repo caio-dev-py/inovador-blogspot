@@ -1,0 +1,42 @@
+{% extends "base.html" %}{% block title %}Post{% endblock %}
+
+{% block content %}
+
+    <form action="{{ action }}" class="container" method="post">
+        
+        {{ form.hidden_tag() }}
+        
+        {{ form.titulo.label(class="form-label") }}
+        {{ form.titulo(class="form-control", required=false) }}
+        {% for erro in form.titulo.errors %}
+            <div class="alert alert-danger alert-dismissible fade show mt-2">
+                {{ msg }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+
+        {{ form.conteudo.label(class="form-label") }}
+        {{ form.conteudo(class="form-control", required=false) }}
+        {% for erro in form.conteudo.errors %}
+            <div class="alert alert-danger alert-dismissible fade show mt-2">
+                {{ msg }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+
+        {% with msgs = get_flashed_messages(with_categories=true) %}
+            {% if msgs %}
+                {% for cat, msg in msgs %}
+                    <div class="alert alert-{{ cat }} alert-dismissible fade show mt-2">
+                        {{ msg }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {{ form.postar(class="btn btn-primary mt-3") }}
+
+    </form>
+
+{% endblock %}
