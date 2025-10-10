@@ -9,5 +9,5 @@ class Config:
     SECRET_KEY = os.getenv("SECRET_KEY")
 
     # CONFIGURAÇÃO DO BANCO DE DADOS
-    SQLALCHEMY_DATABASE_URI = "sqlite:////tmp/database.db"
+    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
